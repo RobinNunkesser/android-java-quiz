@@ -13,8 +13,20 @@ import de.hshl.isd.quiz.R;
 
 public class MainViewModel extends ViewModel {
     private List<Pair<String, Boolean>> questions = new ArrayList<>();
-    private MutableLiveData<Integer> index = new MutableLiveData<>();
+    private MutableLiveData<Integer> index = new MutableLiveData<>(0);
     public LiveData<Integer> getIndex() { return index; }
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public int getWrongAnswers() {
+        return wrongAnswers;
+    }
+
+    public int getSkippedQuestions() {
+        return skippedQuestions;
+    }
 
     private int correctAnswers = 0;
     private int wrongAnswers = 0;
